@@ -1,2 +1,3 @@
 # Image-Classification-with-CNN-models
-A simple tutorial for CNN models with Tensorflow-keras and Pytorch framework for image classification using Cifar-10 dataset
+A simple tutorial for CNN models with TensorFlow-keras and Pytorch framework for Image classification using the Cifar-10 dataset.
+![Image](https://github.com/user-attachments/assets/f8ee80b9-00ae-400c-813e-9a04a6d540be)
