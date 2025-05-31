@@ -6,7 +6,7 @@ A tutorial for image classification on the CIFAR-10 dataset using Convolutional 
 
 ## Dataset
 
-The [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) dataset consists of 60,000 32x32 color images in 10 classes, with 6,000 images per class:
+The [CIFAR-10 dataset](https://www.cs.toronto.edu/~kriz/cifar.html) consists of 60,000 32x32 colour images in 10 classes, with 6,000 images per class:
 
 - airplane
 - automobile
@@ -57,8 +57,8 @@ See: [with_tensorflow.ipynb](with_tensorflow.ipynb)
 
 1. **Data Loading & Preprocessing**
     - Load CIFAR-10 dataset.
-    - Normalize pixel values to [0, 1].
-    - Visualize sample images.
+    - Normalise pixel values.
+    - Visualise sample images.
 
 2. **Model Architectures**
     - **Feedforward ANN**: Baseline dense network.
@@ -71,44 +71,78 @@ See: [with_tensorflow.ipynb](with_tensorflow.ipynb)
 
 4. **Evaluation**
     - Classification reports and confusion matrices are generated.
-    - Example code for visualizing predictions.
+    - Example code for visualising predictions.
 
 ### Example Results
 
 #### ANN Network
 
-- **Accuracy**: ~56%
-- **Classification Report**:  
+- ** Training Accuracy**: ~91.75% at the end of 50 epochs
+- **Classification Report** of test-data:  
   ```
-    precision    recall  f1-score   support
-    ...
+                precision    recall  f1-score   support
+
+           0       0.57      0.72      0.63      1000
+           1       0.71      0.65      0.68      1000
+           2       0.42      0.55      0.48      1000
+           3       0.41      0.33      0.36      1000
+           4       0.48      0.54      0.51      1000
+           5       0.45      0.54      0.49      1000
+           6       0.66      0.58      0.62      1000
+           7       0.75      0.53      0.62      1000
+           8       0.77      0.57      0.65      1000
+           9       0.63      0.64      0.64      1000
+
     accuracy                           0.56     10000
-    macro avg       0.58      0.56      0.57     10000
-    weighted avg    0.58      0.56      0.57     10000
+   macro avg       0.58      0.56      0.57     10000
+   weighted avg       0.58      0.56      0.57     10000
   ```
 
 #### CNN (Decreasing Filters)
 
-- **Accuracy**: ~67%
-- **Classification Report**:  
+- **Training Accuracy**: ~95.49% at the end of 50 epochs
+- **Classification Report** of test-data:  
   ```
-    precision    recall  f1-score   support
-    ...
+                precision    recall  f1-score   support
+
+           0       0.72      0.66      0.69      1000
+           1       0.81      0.77      0.79      1000
+           2       0.58      0.52      0.55      1000
+           3       0.43      0.57      0.49      1000
+           4       0.60      0.63      0.62      1000
+           5       0.60      0.52      0.56      1000
+           6       0.77      0.74      0.76      1000
+           7       0.76      0.65      0.70      1000
+           8       0.76      0.79      0.77      1000
+           9       0.73      0.80      0.76      1000
+
     accuracy                           0.67     10000
     macro avg       0.68      0.67      0.67     10000
-    weighted avg    0.68      0.67      0.67     10000
+    weighted avg       0.68      0.67      0.67     10000
   ```
 
 #### CNN (Increasing Filters)
 
-- **Accuracy**: ~68%
-- **Classification Report**:  
+- **Training Accuracy**: ~96.84% at the end of 50 epochs
+- **Classification Report** of test-data:  
   ```
-    precision    recall  f1-score   support
-    ...
-    accuracy                           0.68     10000
-    macro avg       0.68      0.67      0.67     10000
-    weighted avg    0.68      0.67      0.67     10000
+                precision    recall  f1-score   support
+
+           0       0.72      0.66      0.69      1000
+           1       0.81      0.77      0.79      1000
+           2       0.58      0.52      0.55      1000
+           3       0.43      0.57      0.49      1000
+           4       0.60      0.63      0.62      1000
+           5       0.60      0.52      0.56      1000
+           6       0.77      0.74      0.76      1000
+           7       0.76      0.65      0.70      1000
+           8       0.76      0.79      0.77      1000
+           9       0.73      0.80      0.76      1000
+
+    accuracy                           0.67     10000
+   macro avg       0.68      0.67      0.67     10000
+  weighted avg       0.68      0.67      0.67     10000
+
   ```
 
 ---
@@ -120,8 +154,8 @@ See: [Pytorch_code/with_pytorch.ipynb](Pytorch_code/with_pytorch.ipynb)
 ### Workflow
 
 1. **Data Loading & Preprocessing**
-    - Load CIFAR-10 dataset using TensorFlow's loader for consistency.
-    - Normalize and convert to PyTorch tensors.
+    - Load the CIFAR-10 dataset using TensorFlow's loader for consistency.
+    - Normalise and convert to PyTorch tensors.
     - Prepare DataLoader for batching.
 
 2. **Model Architecture**
@@ -132,8 +166,8 @@ See: [Pytorch_code/with_pytorch.ipynb](Pytorch_code/with_pytorch.ipynb)
         - ReLU and Sigmoid activations
 
 3. **Training**
-    - Trained for 200 epochs using Adam optimizer and CrossEntropyLoss.
-    - Loss printed every 10 epochs.
+    - Trained for 200 epochs using Adam optimiser and CrossEntropyLoss.
+    - Loss is printed every 10 epochs.
 
 4. **Saving & Loading**
     - Model parameters saved to `pytorch_parameters.pth`.
@@ -154,12 +188,18 @@ See: [Pytorch_code/with_pytorch.ipynb](Pytorch_code/with_pytorch.ipynb)
       (activation): Sigmoid()
     )
     ```
+- Performance **Results** on test-data:
+  ```
+     Correctly predicted: 6714 and Wrongly predicted: 3286
+     Total test data: 10000
+     Accuracy of the model: 67.14%
+  ```    
 
 ---
 
 ## Visualizations
 
-- The notebooks include code to visualize sample images and predictions using matplotlib.
+- The notebooks include code to visualise sample images and predictions using matplotlib.
 
 ---
 
